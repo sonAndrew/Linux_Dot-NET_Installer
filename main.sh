@@ -44,9 +44,9 @@ read distro
 
 case $distro in
 	4)
-		source "./Distro_Installers/fedora_Installer.sh"
+		source "./distro_Installers/fedora_Installer.sh"
 	;;
 	7)
-		source "./DistroInstallers/ubuntu_Installer.sh"
+		source "./distroInstallers/ubuntu_Installer.sh"
 	;;
 esac

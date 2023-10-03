@@ -3,8 +3,8 @@
 # This Script installs the .NET SDK or Runtime for Fedora.
 
 # Sources
-source "../Function_Libraries/sdk_library/"
-source "../Function_Libraries/runtime_Library/"
+source "../function_Libraries/sdk_library/"
+source "../function_Libraries/runtime_Library/"
 
 # Prompt User
 echo "Do you want to install the SDK or Runtime?"
