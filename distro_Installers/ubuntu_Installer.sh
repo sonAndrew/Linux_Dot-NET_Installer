@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 
 #This Script installs the .NET SDK or Runtime
 

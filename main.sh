@@ -1,6 +1,6 @@
-#!/bin/bash/
+#!/bin/bash
 
-# This Script installs the .NET SDK or Runtime
+# This is the Main Script to install the .NET SDK or Runtime.
 
 # VARIABLES
 lineNumber=0
@@ -42,21 +42,11 @@ echo " "
 # Get user value
 read distro
 
-# case $distro in
-# 	1)
-
-# 	;;
-# 	2)
-# 	;;
-# 	3)
-# 	;;
-# 	4)
-# 	;;
-# 	5)
-# 	;;
-# 	6)
-# 	;;
-# 	7)
-# 	;;
-# 	8)
-# 	;;
+case $distro in
+	4)
+		source "./Distro_Installers/fedora_Installer.sh"
+	;;
+	7)
+		source "./DistroInstallers/ubuntu_Installer.sh"
+	;;
+esac
