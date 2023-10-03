@@ -3,7 +3,8 @@
 # This Script installs the .NET SDK or Runtime for Fedora.
 
 # Sources
-source "../Function_Libraries/sdk_library/sdk7.sh"
+source "../Function_Libraries/sdk_library/"
+source "../Function_Libraries/runtime_Library/"
 
 # Prompt User
 echo "Do you want to install the SDK or Runtime?"
@@ -13,8 +14,7 @@ read answer
 # Check if ( $answer ) is ( sdk or rt ).
 case $answer in
     # If ( sdk )
-    "sdk") 
-
+    "sdk")
         installSDK7
     ;;
     "rt")
@@ -24,12 +24,10 @@ case $answer in
 
         case $answer in
             "asp")
-                sudo dnf update && \
-                    sudo dnf install aspnetcore-runtime-7.0
+                installASPNETCORE7
             ;;
             "net")
-                sudo dnf undate && \
-                    sudo dnf install dotnet-runtime-7.0
+                installDOTNET7
             ;;
         esac
     ;;
