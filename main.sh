@@ -2,43 +2,24 @@
 
 # This is the Main Script to install the .NET SDK or Runtime.
 
-# VARIABLES
-lineNumber=0
+# Sources
+source "./functional_Library/read-lines-in-file.sh"
+source "./prompt_Library/main-prompts.sh"
+source "./prompt_Library/formating-lines.sh"
 
 # Ask for package manager
-echo " "
-echo "What is your Distrobution based on?"
-echo " "
-echo "***********************************"
-echo "*                                 *"
-
+skip_line
+ask_for_distrobution
+skip_line
+top_of_box
 # Loop through and read each line of ( distros.txt )
-while IFS= read -r line; 
-do 
-	# Increase the value of ( lineNumber )
-	((lineNumber++))
-	case ${#line} in
-		4)
-			# echo "${#line}"
-			printf '%s\n' "*          $lineNumber. $line                *"
-			;;
-		6)
-			# echo "${#line}"
-			printf '%s\n' "*          $lineNumber. $line              *"
-			;;
-		8)
-			# echo "${#line}"
-			printf '%s\n' "*          $lineNumber. $line            *"
-			;;
-	esac
-done < distros.txt
-echo "*                                 *"
-echo "***********************************"
-
-echo "If your distro is not listed, then ( ctr + c) to exit the program."
-echo " "
-echo "Enter the number now!"
-echo " "
+read_lines "./distros.txt"
+bottom_of_box
+skip_line
+notice
+skip_line
+prompt_to_enter_number
+skip_line
 # Get user value
 read distro
 
