@@ -1,4 +1,4 @@
 installSDK6(){
-    sudo dnf update && \
-        sudo dnf install dotnet-sdk-6.0
+    sudo $1 update && \
+        sudo $1 install dotnet-sdk-6.0
 }
