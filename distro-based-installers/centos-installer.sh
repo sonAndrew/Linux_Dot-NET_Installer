@@ -27,6 +27,9 @@
 
 # sudo yum install dotnet-runtime-7.0
 
+echo "* NOTICE"
+echo "* The installation of .NET 7 is only available on CentOS 7."
+
 # Prompt .NET install function.
 prompt_install_type(){
     # Prompt which .NET you want to install.
@@ -43,6 +46,14 @@ prompt_install_type(){
     echo "* Enter ( $3 ) or ( $4 )."
 }
 
+# Microsoft package signing key function.
+centos_ms_signing_key(){
+    # Before you install .NET, run the following commands to add the Microsoft package 
+    # signing key to your list of trusted keys and add the Microsoft package repository. 
+    # Open a terminal and run the following commands:
+    sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+}
+
 prompt_install_type SDK Runtime sdk rt
 read install_type
 
@@ -52,17 +63,11 @@ case $install_type in
         read version
         case $version in
             6)
-                # Before you install .NET, run the following commands to add the Microsoft package 
-                # signing key to your list of trusted keys and add the Microsoft package repository. 
-                # Open a terminal and run the following commands:
-                sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+                centos_ms_signing_key
                 sudo yum install dotnet-sdk-6.0
             ;;
             7)
-                # Before you install .NET, run the following commands to add the Microsoft package 
-                # signing key to your list of trusted keys and add the Microsoft package repository. 
-                # Open a terminal and run the following commands:
-                sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+                centos_ms_signing_key
                 sudo yum install dotnet-sdk-7.0
             ;;
         esac
@@ -77,17 +82,11 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        # Before you install .NET, run the following commands to add the Microsoft package 
-                        # signing key to your list of trusted keys and add the Microsoft package repository. 
-                        # Open a terminal and run the following commands:
-                        sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+                        centos_ms_signing_key
                         sudo yum install aspnetcore-runtime-6.0
                     ;;
                     7)
-                        # Before you install .NET, run the following commands to add the Microsoft package 
-                        # signing key to your list of trusted keys and add the Microsoft package repository. 
-                        # Open a terminal and run the following commands:
-                        sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+                        centos_ms_signing_key
                         sudo yum install aspnetcore-runtime-7.0
                     ;;
                 esac
@@ -97,17 +96,11 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        # Before you install .NET, run the following commands to add the Microsoft package 
-                        # signing key to your list of trusted keys and add the Microsoft package repository. 
-                        # Open a terminal and run the following commands:
-                        sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+                        centos_ms_signing_key
                         sudo yum install dotnet-runtime-6.0
                     ;;
                     7)
-                        # Before you install .NET, run the following commands to add the Microsoft package 
-                        # signing key to your list of trusted keys and add the Microsoft package repository. 
-                        # Open a terminal and run the following commands:
-                        sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+                        centos_ms_signing_key
                         sudo yum install dotnet-runtime-7.0
                     ;;
                 esac
