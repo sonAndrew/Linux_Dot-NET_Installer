@@ -43,11 +43,13 @@ case $install_type in
         case $version in
             6)
                 ms_pkg_signing_key
-                sudo apt-get install -y dotnet-sdk-6.0
+                sudo apt-get update && \
+                    sudo apt-get install -y dotnet-sdk-6.0
             ;;
             7)
                 ms_pkg_signing_key
-                sudo apt-get install -y dotnet-sdk-7.0
+                sudo apt-get update && \
+                    sudo apt-get install -y dotnet-sdk-7.0
             ;;
             *)
                 printf "A valid input was not entered and now exiting program.\n"
@@ -65,11 +67,13 @@ case $install_type in
                 case $version in
                     6)
                         ms_pkg_signing_key
-                        sudo apt-get install -y aspnetcore-runtime-6.0
+                        sudo apt-get update && \
+                            sudo apt-get install -y aspnetcore-runtime-6.0
                     ;;
                     7)
                         ms_pkg_signing_key
-                        sudo apt-get install -y aspnetcore-runtime-7.0
+                        sudo apt-get update && \
+                            sudo apt-get install -y aspnetcore-runtime-7.0
                     ;;
                     *)
                         printf "A valid input was not entered and now exiting program.\n"
@@ -83,11 +87,13 @@ case $install_type in
                 case $version in
                     6)
                         ms_pkg_signing_key
-                        sudo apt-get install -y dotnet-runtime-6.0
+                        sudo apt-get update && \
+                            sudo apt-get install -y dotnet-runtime-6.0
                     ;;
                     7)
                         ms_pkg_signing_key
-                        sudo apt-get install -y dotnet-runtime-7.0
+                        sudo apt-get update && \
+                            sudo apt-get install -y dotnet-runtime-7.0
                     ;;
                     *)
                         printf "A valid input was not entered and now exiting program.\n"

@@ -48,10 +48,12 @@ case $install_type in
         read version
         case $version in
             6)
-                sudo apk add dotnet6-sdk
+                sudo apt-get update && \
+                    sudo apk add dotnet6-sdk
             ;;
             7)
-                sudo apk add dotnet7-sdk
+                sudo apt-get update && \
+                    sudo apk add dotnet7-sdk
             ;;
             *)
                 printf "A valid input was not entered and now exiting program.\n"
@@ -68,10 +70,12 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo apk add aspnetcore6-runtime
+                        sudo apt-get update && \
+                            sudo apk add aspnetcore6-runtime
                     ;;
                     7)
-                        sudo apk add aspnetcore7-runtime
+                        sudo apt-get update && \
+                            sudo apk add aspnetcore7-runtime
                     ;;
                     *)
                         printf "A valid input was not entered and now exiting program.\n"
@@ -83,10 +87,12 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo apk add dotnet6-runtime
+                        sudo apt-get update && \
+                            sudo apk add dotnet6-runtime
                     ;;
                     7)
-                        sudo apk add dotnet7-runtime
+                        sudo apt-get update && \
+                            sudo apk add dotnet7-runtime
                     ;;
                     *)
                         printf "A valid input was not entered and now exiting program.\n"

@@ -49,10 +49,12 @@ case $install_type in
         read version
         case $version in
             6)
-                sudo dnf install dotnet-sdk-6.0
+                sudo apt-get update && \
+                    sudo dnf install dotnet-sdk-6.0
             ;;
             7)
-                sudo dnf install dotnet-sdk-7.0
+                sudo apt-get update && \
+                    sudo dnf install dotnet-sdk-7.0
             ;;
             *)
                 printf "A valid input was not entered and now exiting program.\n"
@@ -69,10 +71,12 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo dnf install aspnetcore-runtime-6.0
+                        sudo apt-get update && \
+                            sudo dnf install aspnetcore-runtime-6.0
                     ;;
                     7)
-                        sudo dnf install aspnetcore-runtime-7.0
+                        sudo apt-get update && \
+                            sudo dnf install aspnetcore-runtime-7.0
                     ;;
                     *)
                         printf "A valid input was not entered and now exiting program.\n"
@@ -84,10 +88,12 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo dnf install dotnet-runtime-6.0
+                        sudo apt-get update && \
+                            sudo dnf install dotnet-runtime-6.0
                     ;;
                     7)
-                        sudo dnf install dotnet-runtime-7.0
+                        sudo apt-get update && \
+                            sudo dnf install dotnet-runtime-7.0
                     ;;
                     *)
                         printf "A valid input was not entered and now exiting program.\n"
