@@ -53,6 +53,9 @@ case $install_type in
             7)
                 sudo apk add dotnet7-sdk
             ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
         esac
     ;;
     rt)
@@ -70,6 +73,9 @@ case $install_type in
                     7)
                         sudo apk add aspnetcore7-runtime
                     ;;
+                    *)
+                        printf("A valid input was not entered and now exiting program.")
+                    ;;
                 esac
             ;;
             net)
@@ -82,8 +88,17 @@ case $install_type in
                     7)
                         sudo apk add dotnet7-runtime
                     ;;
+                    *)
+                        printf("A valid input was not entered and now exiting program.")
+                    ;;
                 esac
             ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
         esac
+    ;;
+    *)
+        printf("A valid input was not entered and now exiting program.")
     ;;
 esac

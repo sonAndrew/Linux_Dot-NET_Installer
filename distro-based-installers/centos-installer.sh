@@ -70,6 +70,9 @@ case $install_type in
                 centos_ms_signing_key
                 sudo yum install dotnet-sdk-7.0
             ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
         esac
     ;;
     rt)
@@ -89,6 +92,9 @@ case $install_type in
                         centos_ms_signing_key
                         sudo yum install aspnetcore-runtime-7.0
                     ;;
+                    *)
+                        printf("A valid input was not entered and now exiting program.")
+                    ;;
                 esac
             ;;
             net)
@@ -103,8 +109,17 @@ case $install_type in
                         centos_ms_signing_key
                         sudo yum install dotnet-runtime-7.0
                     ;;
+                    *)
+                        printf("A valid input was not entered and now exiting program.")
+                    ;;
                 esac
             ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
         esac
+    ;;
+    *)
+        printf("A valid input was not entered and now exiting program.")
     ;;
 esac

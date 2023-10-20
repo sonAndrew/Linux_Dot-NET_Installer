@@ -54,6 +54,9 @@ case $install_type in
             7)
                 sudo dnf install dotnet-sdk-7.0
             ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
         esac
     ;;
     rt)
@@ -71,6 +74,9 @@ case $install_type in
                     7)
                         sudo dnf install aspnetcore-runtime-7.0
                     ;;
+                    *)
+                        printf("A valid input was not entered and now exiting program.")
+                    ;;
                 esac
             ;;
             net)
@@ -83,8 +89,17 @@ case $install_type in
                     7)
                         sudo dnf install dotnet-runtime-7.0
                     ;;
+                    *)
+                        printf("A valid input was not entered and now exiting program.")
+                    ;;
                 esac
             ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
         esac
+    ;;
+    *)
+        printf("A valid input was not entered and now exiting program.")
     ;;
 esac
