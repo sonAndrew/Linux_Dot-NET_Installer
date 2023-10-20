@@ -35,24 +35,27 @@ prompt_install_type SDK Runtime sdk rt
 read install_type
 
 case $install_type in
-    ms_pkg_signing_key
+    
     sdk)
-    prompt_install_type 7.0 6.0 7 6
-    read version
-    case $version in
-        6)
-            sudo apt-get install -y dotnet-sdk-6.0
-        ;;
-        7)
-            sudo apt-get install -y dotnet-sdk-7.0
-        ;;
-        *)
-            printf("A valid input was not entered and now exiting program.")
-        ;;
-    esac
+        
+        prompt_install_type 7.0 6.0 7 6
+        read version
+        case $version in
+            6)
+                ms_pkg_signing_key
+                sudo apt-get install -y dotnet-sdk-6.0
+            ;;
+            7)
+                ms_pkg_signing_key
+                sudo apt-get install -y dotnet-sdk-7.0
+            ;;
+            *)
+                printf("A valid input was not entered and now exiting program.")
+            ;;
+        esac
     ;;
     rt)
-        ms_pkg_signing_key
+        
         prompt_install_type ASP Dot-NET asp net
         read runtime_type
         case $runtime_type in
@@ -61,9 +64,11 @@ case $install_type in
                 read version
                 case $version in
                     6)
+                        ms_pkg_signing_key
                         sudo apt-get install -y aspnetcore-runtime-6.0
                     ;;
                     7)
+                        ms_pkg_signing_key
                         sudo apt-get install -y aspnetcore-runtime-7.0
                     ;;
                     *)
@@ -72,14 +77,16 @@ case $install_type in
                 esac
             ;;
             net)
-                ms_pkg_signing_key
+                
                 prompt_install_type 7.0 6.0 7 6
                 read version
                 case $version in
                     6)
+                        ms_pkg_signing_key
                         sudo apt-get install -y dotnet-runtime-6.0
                     ;;
                     7)
+                        ms_pkg_signing_key
                         sudo apt-get install -y dotnet-runtime-7.0
                     ;;
                     *)
