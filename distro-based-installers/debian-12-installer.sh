@@ -24,33 +24,37 @@ prompt_install_type(){
     echo " "
     echo "* Enter ( $3 ) or ( $4 )."
 }
+# Microsoft Package Signing Key
+ms_pkg_signing_key(){
+    wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
+}
 
 prompt_install_type SDK Runtime sdk rt
 read install_type
 
 case $install_type in
-    wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb
-    rm packages-microsoft-prod.deb
+    ms_pkg_signing_key
     sdk)
-        prompt_install_type 7.0 6.0 7 6
-        read version
-        case $version in
-            6)
-                sudo apt-get install -y dotnet-sdk-6.0
-            ;;
-            7)
-                sudo apt-get install -y dotnet-sdk-7.0
-            ;;
-            *)
-                printf("A valid input was not entered and now exiting program.")
-            ;;
-        esac
+    prompt_install_type 7.0 6.0 7 6
+    read version
+    case $version in
+        6)
+            sudo apt-get install -y dotnet-sdk-6.0
+        ;;
+        7)
+            sudo apt-get install -y dotnet-sdk-7.0
+        ;;
+        *)
+            printf("A valid input was not entered and now exiting program.")
+        ;;
+    esac
     ;;
     rt)
+        ms_pkg_signing_key
         prompt_install_type ASP Dot-NET asp net
         read runtime_type
-
         case $runtime_type in
             asp)
                 prompt_install_type 7.0 6.0 7 6
@@ -68,6 +72,7 @@ case $install_type in
                 esac
             ;;
             net)
+                ms_pkg_signing_key
                 prompt_install_type 7.0 6.0 7 6
                 read version
                 case $version in
