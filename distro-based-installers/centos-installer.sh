@@ -71,7 +71,7 @@ case $install_type in
                 sudo yum install dotnet-sdk-7.0
             ;;
             *)
-                printf("A valid input was not entered and now exiting program.")
+                printf "A valid input was not entered and now exiting program.\n"
             ;;
         esac
     ;;
@@ -93,7 +93,7 @@ case $install_type in
                         sudo yum install aspnetcore-runtime-7.0
                     ;;
                     *)
-                        printf("A valid input was not entered and now exiting program.")
+                        printf "A valid input was not entered and now exiting program.\n"
                     ;;
                 esac
             ;;
@@ -110,16 +110,16 @@ case $install_type in
                         sudo yum install dotnet-runtime-7.0
                     ;;
                     *)
-                        printf("A valid input was not entered and now exiting program.")
+                        printf "A valid input was not entered and now exiting program.\n"
                     ;;
                 esac
             ;;
             *)
-                printf("A valid input was not entered and now exiting program.")
+                printf "A valid input was not entered and now exiting program.\n"
             ;;
         esac
     ;;
     *)
-        printf("A valid input was not entered and now exiting program.")
+        printf "A valid input was not entered and now exiting program.\n"
     ;;
 esac
