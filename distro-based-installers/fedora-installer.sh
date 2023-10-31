@@ -49,11 +49,11 @@ case $install_type in
         read version
         case $version in
             6)
-                sudo apt-get update && \
+                sudo dnf update && \
                     sudo dnf install dotnet-sdk-6.0
             ;;
             7)
-                sudo apt-get update && \
+                sudo dnf update && \
                     sudo dnf install dotnet-sdk-7.0
             ;;
             *)
@@ -71,11 +71,11 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo apt-get update && \
+                        sudo dnf update && \
                             sudo dnf install aspnetcore-runtime-6.0
                     ;;
                     7)
-                        sudo apt-get update && \
+                        sudo dnf update && \
                             sudo dnf install aspnetcore-runtime-7.0
                     ;;
                     *)
@@ -88,7 +88,7 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo apt-get update && \
+                        sudo dnf update && \
                             sudo dnf install dotnet-runtime-6.0
                     ;;
                     7)
