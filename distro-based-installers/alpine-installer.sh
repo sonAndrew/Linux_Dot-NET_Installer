@@ -48,11 +48,11 @@ case $install_type in
         read version
         case $version in
             6)
-                sudo apt-get update && \
+                sudo apk update && \
                     sudo apk add dotnet6-sdk
             ;;
             7)
-                sudo apt-get update && \
+                sudo apk update && \
                     sudo apk add dotnet7-sdk
             ;;
             *)
@@ -70,11 +70,11 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo apt-get update && \
+                        sudo apk update && \
                             sudo apk add aspnetcore6-runtime
                     ;;
                     7)
-                        sudo apt-get update && \
+                        sudo apk update && \
                             sudo apk add aspnetcore7-runtime
                     ;;
                     *)
@@ -87,11 +87,11 @@ case $install_type in
                 read version
                 case $version in
                     6)
-                        sudo apt-get update && \
+                        sudo apk update && \
                             sudo apk add dotnet6-runtime
                     ;;
                     7)
-                        sudo apt-get update && \
+                        sudo apk update && \
                             sudo apk add dotnet7-runtime
                     ;;
                     *)

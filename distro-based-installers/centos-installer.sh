@@ -64,12 +64,14 @@ case $install_type in
         case $version in
             6)
                 centos_ms_signing_key
-                sudo apt-get update && \
+                sudo dnf check-update
+                sudo dnf update && \
                     sudo yum install dotnet-sdk-6.0
             ;;
             7)
                 centos_ms_signing_key
-                sudo apt-get update && \
+                sudo dnf check-update
+                sudo dnf update && \
                     sudo yum install dotnet-sdk-7.0
             ;;
             *)
@@ -88,12 +90,14 @@ case $install_type in
                 case $version in
                     6)
                         centos_ms_signing_key
-                        sudo apt-get update && \
+                        sudo dnf check-update
+                        sudo dnf update && \
                             sudo yum install aspnetcore-runtime-6.0
                     ;;
                     7)
                         centos_ms_signing_key
-                        sudo apt-get update && \
+                        sudo dnf check-update
+                        sudo dnf update && \
                             sudo yum install aspnetcore-runtime-7.0
                     ;;
                     *)
@@ -107,12 +111,14 @@ case $install_type in
                 case $version in
                     6)
                         centos_ms_signing_key
-                        sudo apt-get update && \
+                        sudo dnf check-update
+                        sudo dnf update && \
                             sudo yum install dotnet-runtime-6.0
                     ;;
                     7)
                         centos_ms_signing_key
-                        sudo apt-get update && \
+                        sudo dnf check-update
+                        sudo dnf update && \
                             sudo yum install dotnet-runtime-7.0
                     ;;
                     *)
